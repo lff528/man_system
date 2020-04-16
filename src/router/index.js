@@ -42,25 +42,40 @@ let routerAll = {
         name: 'yichangshebei',
         component: resolve => require(['@/view/footerNav/yichangshebei'], resolve),
       },
+      {
+        path: '/huozaibaojingzhuji',
+        name: 'huozaibaojingzhuji',
+        component: resolve => require(['@/components/xiaofang/huozaibaojingzhuji'], resolve),
+      },
+      
+      
     ]
     }
   ]
 }
 routers.forEach((item=>{
   if(item.children){
-
-  
-  item.children.forEach((itemA)=>{
-    routerAll.routes[1].children.push({
-      path: itemA.path,
-      name: itemA.name,
-      component: itemA.component,
+    item.children.forEach((itemA)=>{
+      if(itemA.children){
+        itemA.children.forEach((itemB)=>{
+          routerAll.routes[1].children.push({
+              path: itemB.path,
+              name: itemB.name,
+              component: itemB.component,
+            })
+        })
+      }else{
+        routerAll.routes[1].children.push({
+          path: itemA.path,
+          name: itemA.name,
+          component: itemA.component,
+        })
+      }
     })
-  })
 }
 }))
 
-// console.log(routerAll.routes[1].children)
+// /console.log(routerAll.routes[1].children)
 const router = new Router(routerAll)
 
 

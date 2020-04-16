@@ -68,7 +68,15 @@ module.exports = {
       {
         test: /\.less$/,
         loader: "style-loader!css-loader!less-loader",
-      }
+      },
+      // {
+      //   test: require.resolve("three/examples/js/controls/OrbitControls"),
+      //   loader: "imports-loader?THREE=three",
+      // },
+      // {
+      //   test: require.resolve("three/examples/js/controls/OrbitControls"),
+      //   loader: "imports-loader?THREE.OrbitControls",
+      // },
     ]
   },
   node: {

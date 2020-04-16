@@ -44,6 +44,9 @@ ol,
 ul {
 	list-style:none;
 }
+li{
+	list-style:none;
+}
 /*版心*/
 .w {
 	width: 1170px;
@@ -66,4 +69,23 @@ ul {
 
 .right {
 	float: right;
+}
+/* 3D图样式 */
+.chart_box{
+	border: 1px solid #aaa;
+	/* padding: 10px; */
+	/* height: 100%; */
+}
+/* 静态表格样式 */
+
+.table_box .el-table th,.table_box .el-table tr{
+	background: #28468a;
+	color: white;
+}
+.table_box .el-table td,.table_box .el-table th{
+  padding: 2px 0;
+}
+.table_box .el-table tr:hover{
+	background: #ccc;
+	color: black;
 }

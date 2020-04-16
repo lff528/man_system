@@ -3,7 +3,7 @@
     <div class="header_btn">
         <span class="el-icon-s-fold huan" @click="collapseBtn"></span>
         <span>
-            <el-button type="primary" v-show="!isShowHeader">返回</el-button>
+            <el-button type="primary" @click="goBack" v-show="!isShowHeader">返回</el-button>
         </span>
     </div>
    
@@ -105,6 +105,9 @@ export default {
       alarmBtn(title){
           this.alarmLayer = true;
           this.alarmTitle = title;
+      },
+      goBack(){
+          this.$router.go(-1)
       }
   }
 }

@@ -7,7 +7,15 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import "./assets/css/reset.css";
 import './until/axios';
-import store from './store'
+import BaiduMap from 'vue-baidu-map';
+    Vue.use(BaiduMap, {
+          /* Visit http://lbsyun.baidu.com/apiconsole/key for details about app key. */
+          ak: 'AiH9Cx6IAOXQ28tudiRF6OBcmplGOWP9'
+    })
+
+// import store from './store'
+// import echarts from 'echarts'
+// Vue.prototype.$echarts = echarts
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 
@@ -15,7 +23,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  store,
+  // store,
   components: { App },
   template: '<App/>'
 })

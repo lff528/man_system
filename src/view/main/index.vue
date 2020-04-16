@@ -23,15 +23,31 @@
                   <i :class="item.icon"></i>
                   <span>{{item.title}}</span>
                 </template>
-                <el-menu-item 
+                <!-- <el-menu-item 
                   v-for="(itemA,indexA) in item.children" 
                   :key="indexA"  
                   :index="itemA.path"
                   >
                   <i :class="itemA.icon"></i>
                   <span @click="routerBtn(itemA.title)">{{itemA.title}}</span>
+                </el-menu-item> -->
+                <template v-for="(itemA,indexA) in item.children" > 
+                  <el-submenu  v-if="itemA.children" :index="`${indexA+1}_1`">
+                        <template slot="title" ><i :class="itemA.icon"></i>{{itemA.title}}</template>
+                        <el-menu-item 
+                              v-for="(itemB,indexB) in itemA.children" 
+                              :key="indexB"  
+                              :index="itemB.path"
+                              >
+                            <i :class="itemB.icon"></i>
+                            <span @click="routerBtn(itemB.title)">{{itemB.title}}</span>
+                        </el-menu-item>
+                  </el-submenu>
+                  <el-menu-item v-else :index="itemA.path" >
+                  <i :class="itemA.icon"></i>
+                  <span @click="routerBtn(itemA.title,itemA.path)">{{itemA.title}}</span>
                 </el-menu-item>
-                
+                </template>
               </el-submenu>
              
             </el-menu>
@@ -142,10 +158,10 @@
            this.$refs.navHeader.isShowHeader = false;
         }
       },
-      routerBtn(name){
+      routerBtn(name,pth){
         this.$refs.navHeader.isShowHeader = false;
-        console.log(name)
-          this.$refs.navHeader.title = name;
+        // console.log(name,pth)
+        this.$refs.navHeader.title = name;
       },
       //左侧菜单收起展开
       collapseBtn(flag,width){
@@ -257,6 +273,7 @@
     
     .el-main {
        color: white;
+       padding: 0;
     }
     
     body > .el-container {
