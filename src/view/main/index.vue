@@ -13,10 +13,10 @@
               class="el-menu-vertical-demo"
               :collapse="isCollapse"
               :unique-opened="true" >
-              <el-menu-item   @click="switchBtn">
+              <!-- <el-menu-item   @click="switchBtn">
                   <i class="el-icon-menu"></i>
                   <span slot="title">选择 220KV河南变电站</span>
-              </el-menu-item>
+              </el-menu-item> -->
              
               <el-submenu v-for="(item ,index) in leftItem" :key="index"  :index="`${index+1}`">
                 <template slot="title" >
@@ -58,13 +58,13 @@
         </el-main>
       </el-container>
       <!-- 底部 -->
-       <el-footer height='50px'>
+       <!-- <el-footer height='50px'>
          <div>
            <ul>
              <li v-for="(item,index) in footerNav" :key="index" @click="footBtn(index,item)" :class="footIndex== index? 'footer_active':''">{{item.name}}</li>
            </ul>
          </div>
-       </el-footer>
+       </el-footer> -->
     </el-container>
     <div class="switch_layer" :style="{left:curHeight.width+'px'}" v-show="switchShow">
       <el-tree :data="treeData" :props="defaultProps" :expand-on-click-node='false'></el-tree>
@@ -81,7 +81,7 @@
     data () {
       return {
         curHeight:{
-          height:window.innerHeight - 117,
+          height:window.innerHeight - 66,  //117,
           width:230
         },
         isCollapse:false, //菜单收起放开
@@ -186,7 +186,7 @@
       this.leftItem = router;
       let that = this;
       window.onresize = function windowResize () {
-        that.curHeight.height = window.innerHeight - 117;
+        that.curHeight.height = window.innerHeight - 66;
       }
     }
   }

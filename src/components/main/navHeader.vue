@@ -9,7 +9,7 @@
    
     <div class="header_right">
        
-        <div class="header_title2" v-if="isShowHeader" >
+        <!-- <div class="header_title2" v-if="isShowHeader" >
             <div class="header_title2_p">
                 <p>
                     <img src="" alt="">
@@ -21,11 +21,11 @@
                 <p>220KV河南变电站辅助设备监控系统</p>
             </div>
             
-        </div>
-         <div class="header_title" v-else>
+        </div> -->
+         <div class="header_title" >
              <div class="header_title_p">
-                 <img src="" alt="">
-                <span>220KV河南变电站辅助设备监控系统</span>
+                 <!-- <img src="" alt=""> -->
+                <span>足道后台管理系统</span>
                 <span>{{title}}</span>
              </div>
         </div>
@@ -46,36 +46,6 @@
         <p>
              2020/01/02 14:02:59
         </p>
-        <div class="header_alt" v-show="isShowHeader">
-            <p>
-                <span>安防总</span>
-                <span class="bg_green"  @click="alarmBtn('安防总')">0</span>
-            </p>
-            <p>
-                <span>消防总</span>
-                <span class="bg_green"  @click="alarmBtn('消防总')">0</span>
-            </p>
-            <p>
-                <span>故障总</span>
-                <span class="bg_red"  @click="alarmBtn('故障总')">2</span>
-            </p>
-            <p>
-                <span>环境总</span>
-                <span class="bg_green"  @click="alarmBtn('环境总')">0</span>
-            </p>
-        </div>
-       
-    </div>
-    <div class="alarm_layer">
-        <el-dialog :title="alarmTitle" :visible.sync="alarmLayer">
-         <ul>
-             <li>第一条记录</li>
-         </ul>
-         <div slot="footer" class="dialog-footer">
-            <el-button @click="alarmLayer = false">取 消</el-button>
-            <el-button type="primary" @click="alarmLayer = false">确 定</el-button>
-        </div>
-        </el-dialog>
     </div>
   </div>
 </template>

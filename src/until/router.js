@@ -1,6 +1,4 @@
 let routers = [
-  
-   
     {
         title:"首页",
         icon:"el-icon-menu",
@@ -22,36 +20,15 @@ let routers = [
                 name: 'shineihongwaiSj',
                 component: resolve => require(['@/view/anquanfangfan/shineihongwaiSj'], resolve),
                 title:'技师空闲状态'
-              },
-              // {
-              //   path: '/menjinkongzhi',
-              //   name: 'menjinkongzhi',
-              //   component: resolve => require(['@/view/anquanfangfan/menjinkongzhi'], resolve),
-              //   title:'门禁控制系统'
-              // },
-              // {
-              //   path: '/menjinjilu',
-              //   name: 'menjinjilu',
-              //   component: resolve => require(['@/view/anquanfangfan/menjinjilu'], resolve),
-              //   title:'门禁记录系统'
-              // },
-              
+              } 
         ]
     },
     {
       title:"账单",
       icon:"el-icon-menu",
       children:[
-            // {
-            // // icon:"el-icon-menu",
-            //   path: '/xiaofangjiankong',
-            //   name: 'xiaofangjiankong',
-            //   component: resolve => require(['@/view/xiaofang/xiaofangjiankong'], resolve),
-            //   title:'消防监控'
-            // },
-            {
+             {
               title:"店面采购",
-              // icon:"el-icon-location-outline",
               children:[{
                 path: '/huozaibaojing',
                 name: 'huozaibaojing',
@@ -67,7 +44,6 @@ let routers = [
             },
             {
               title:"账单录入",
-              // icon:"el-icon-location-outline",
               children:[{
                 path: '/qitimiehuo',
                 name: 'qitimiehuo',
@@ -85,28 +61,16 @@ let routers = [
                   component: resolve => require(['@/view/xiaofang/miehuoqipeizhi'], resolve),
                   title:'画板1'
                 },
-                // {
-                //   path: '/yingjizhaoming',
-                //   name: 'yingjizhaoming',
-                //   component: resolve => require(['@/view/xiaofang/yingjizhaoming'], resolve),
-                //   title:'应急照明及疏散指示灯系统'
-                // }
               ],
             },
             {
                title:'订单查询',
-               // icon:"el-icon-location-outline",
-               children:[{path: '/paizhuzhudan',
+               children:[
+                 {path: '/paizhuzhudan',
                   name: 'paizhuzhudan',
                   component: resolve => require(['@/view/xiaofang/paizhuzhudan'], resolve),
                   title:'快速查询'
                   },
-                  // {
-                  //   path: '/zhubianpaizhuzhudan2',
-                  //   name: 'zhubianpaizhuzhudan',
-                  //   component: resolve => require(['@/view/xiaofang/zhubianpaizhuzhudan'], resolve),
-                  //   title:'2号主编变压器排油注氮'
-                  // }
                 ]
             },
       ]
@@ -157,9 +121,7 @@ let routers = [
               name: 'huanjingjiankong',
               component: resolve => require(['@/view/huanjingjiankong/huanjingjiankong'], resolve),
               title:'客房管理'
-            },
-           
-           
+            }
       ]
     },
     {
