@@ -15,7 +15,7 @@
     "element-ui": "^2.13.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
-    "three": "^0.115.0",
+    "three": "^0.125.0",
     "vue": "^2.5.2",
     "vue-baidu-map": "^0.21.22",
     "vue-router": "^3.0.1",
